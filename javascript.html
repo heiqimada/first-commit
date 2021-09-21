@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script >
+        // function double(num1) {
+        //     // 如果返回值是非数字,就不做任何操作,否则,就返回二倍
+        //     if (isNaN(num1)==false) {
+        //         num1=num1*2
+        //     }
+        //     return num1;
+        // }
+
+        // alert(double(num1=34));
+
+        // 求任意一组数的平均值
+        // function getAvg() {
+        //     var Len=arguments.length;
+        //     console.log(Len);
+        //     var sum=0,i;
+
+        //     for (i=0;i<arguments.length;i++) {
+        //         document.write(arguments[i]);
+        //     }
+            
+        // }
+        // var a =[1,"yes",2];
+        // var b = new Array();
+        // 方法一
+        // var b =a ;
+
+        // 方法二
+        // var i;
+        // for (i=0;i<a.length;i++){
+        //     b.push(a[i]);
+        // }
+        // document.write(a+"<br />"+b);
+
+        // 方法三
+        // b=[].concat(a);
+        // document.write(a+"<br />"+b);
+
+        // 方法四
+        // b=a.slice(0);
+        // document.write(a+"<br />"+b);
+
+        // 自行封装一个indexOf函数
+        
+
+            // 因为原indexOf是array下的一个对象,但是我们创建函数就不会在array下
+        // function indexOfo(arr,searchIndex) {
+        //     // var arr = new Array();
+        //     for (var i=0;i<arr.length;i++){
+        //         if (searchIndex===arr[i]){
+        //             return i;
+        //         }
+        //     }
+        //     return -1;
+        // }
+        // var b=[4,2,3,2,1];
+        // document.write(indexOfo(b,2));
+
+        // 获取扩展名
+        // var a ="www.12345.com";
+        // document.write(a.slice(a.lastIndexOf(".")))
+
+        // 把函数名都封装成驼峰命名方式
+
+        /* var code ="hello-world-welcome-my-home"
+
+        function codeUpper(code) {              //还是老毛病，函数的定义
+            
+            
+            var codeArr=code.split("-");        // 按-分割原code，获得codeArr数组
+            //console.log(codeArr.length);     // 检测
+            //console.log(codeArr);            // 检测
+            var newCode=codeArr[0];                 //为code的第一个元素
+            for (var i=1;i<codeArr.length;i++){   // 遍历第一个以后的每一个字符
+                var j=codeArr[i];
+                //console.log(j);           // 检测
+                codeArrUp=j.replace(j.charAt(0),j.charAt(0).toUpperCase());  // +.substr(1)也行
+                //console.log(codeArrUp+"<br />");     // 检测
+                //newCode=newCode.push(codeArrUp);    //这句有毛病  push这么用就出bug了   不能自己push自己，
+                newCode=newCode.concat(codeArrUp)   //把每个元素连接在一起，可以直接+=  牛逼
+                //console.log(newCode);            // 检测
+            }   
+            //document.write(newCode);               // 检测
+            return newCode;
+        }
+        document.write(codeUpper(code));            //还是老毛病，调用函数不能是任何值的对象 */
+
+        //math.abs()
+        /*var a=-123;
+        console.log(math.abs(a))*/
+
+        // 生成一个n~m之间的随机整数
+        /*function randomInt(n,m) {
+            var a=Math.floor(Math.random()*(m-n+1)+n);
+            return a;
+        }
+        console.log(randomInt(3,7))*/
+        /*var weeks=new Array("日","一","二","三","四","五","六");
+        var dayTIME=new Date();
+        var week=dayTIME.getDay();
+        var today=dayTIME.getDate();
+        var month=dayTIME.getMonth();
+        var yearNow=dayTIME.getFullYear();
+        var temp=new Date(yearNow,month+50,today);
+        
+        console.log(temp.getFullYear()+" "+temp.getMonth()+" "+temp.getDate()+weeks[temp.getDay()])
+
+        // 重新来过
+        year=new Date().getFullYear();
+        month=new Date().getMonth();
+        day=new Date().getDate(); 
+        temp=new Date(year,month+50,day)
+        console.log(temp.getFullYear()+" "+temp.getMonth()+" "+temp.getDate())*/
+
+        // 寻找喇叭花数  abc=a!+b!+c!
+        // var a,b,c,j;
+        
+        // // !
+        // function jc(num) {
+        //     var x=1;
+        //     for (i=1;i<=num;i++){
+        //         x=x*i;
+        //     }
+        //     return x;
+        // }
+
+        // for(j=100;j<=999;j++){
+        //     a=parseInt(j/100);
+        //     b=parseInt(j/10-a*10);
+        //     c=parseInt(j-b*10-a*100);
+        //     if (j==jc(a)+jc(b)+jc(c)) {
+        //         console.log(j+"是喇叭花数");
+        //     }
+
+        // }
+
+
+
+
+        // for(a=0,b=0,c=0;a<=10,b<=10,c<=10;a++,b++,c++){
+        //     // console.log(a,b,c)
+        //     for(j=100;j<=999;j++){
+        //         if (j==a*100+b*10+c*1 &&j==jc(a)+jc(b)+jc(c) ){
+        //         console.log(j+"是喇叭花数");
+        //         }
+        //     }
+        // }
+        
+        
+        // 二位数组的克隆（深克隆）
+        /*var a1=[123,234,345,456,[12,23]];
+         
+        function deepclon(arr) {
+            // 外循环遍历复制
+            // 遇到二级数组时进入再遍历复制
+            var clon=[];
+            for (var i=0;i<arr.length;i++) {
+                if (Array.isArray(arr[i])) {
+                    clon.push(deepclon(arr[i]));
+                    
+                }
+                else {
+                    clon.push(arr[i]);
+                }
+            }
+            return clon;
+        }
+        var a2=deepclon(a1);
+        console.log(a2)
+        var a2[4].push(99)
+        console.log(a3)*/
+
+        // 检测不同小区的体温是否正常
+
+
+        function chackTemp_Standard(standard) {
+            function checkTemp(n) {
+                if (n<=standard) {
+                    alert ("体温正常") ;
+                }
+                else {alert ("体温偏高");}
+            }
+        }
+
+        var checkTemp_A=chackTemp_Standard(37);
+        checkTemp_A(36);
+        checkTemp_A(37.2);
+
+
+
+    </script>
+</body>
+</html>
