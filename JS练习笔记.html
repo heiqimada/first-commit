@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM exercise</title>
+</head>
+
+<body>
+    <div id="box1">我是盒子1
+        <p>我是P标签1</p>
+        <p>我是P标签2</p>
+        <p>我是P标签3</p>
+        <p>我是P标签4</p>
+    </div>
+    <div id="box2">我是盒子2
+        <p>我是P标签5</p>
+        <p class="spce1">我是P标签6</p>
+        <p class="spce">我是P标签7</p>
+        <p>我是P标签8</p>
+    </div>
+    <script>
+
+        /*var box1 = document.getElementById("box1")
+        // 寻找所有子节点元素函数,把子节点里的元素节点挑出来
+        function findChildren(node) {
+            // 返回子元素数列
+            children = [];
+            // 遍历子节点，筛出元素节点推给children[]
+            for (var i = 0; i < node.childNodes.length; i++) {
+                if (node.childNodes[i].nodeType == 1) {
+                    children.push(node.childNodes[i]);
+                }
+            }
+            return children;
+        }
+        console.log(findChildren(box1));*/
+
+
+        // “寻找前一个兄弟元素节点”函数
+        // 参数是兄弟，
+        var ps = document.querySelector("box1.first-child")
+        console.log(ps)
+        // 寻找前一个元素函数,把子节点里的元素节点挑出来
+        function getPrevious(node) {
+            // 一个一个筛选前面的节点，倒着，如果是元素，就赋值给previous，跳出来，如果前面没有，则返回是第一个元素
+            // 循环代替
+            var i = node
+            
+            while (i.previousSibling  != null) {
+                if (i.previousSibling.nodeType == 1) {
+                    // 若是元素，循环结束
+                    return i.previousSibling;
+                }
+                // 否则，节点=前一个节点
+                else {
+                    i = i.previousSibling;
+                }
+            }
+            return null;
+
+        }
+        console.log(getPrevious(ps));
+        
+
+
+    </script>
+</body>
+
+</html>
