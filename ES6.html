@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 箭头函数的应用 -->
+    <!-- <style>
+        #bt {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: rgb(201, 201, 201);
+        }
+    </style> -->
+    <!--     创建一个按钮点击旁边计数
+    <div id="bt">点击</div>
+    <div id="count">0</div>
+    <script>
+        // 点击按钮，计数器从0开始自动计时
+        const bt = document.getElementById("bt")
+        const count = document.getElementById("count")
+
+        let numb = 0;      //封装成一整个对象呢？
+        bt.onclick = function () {
+            setInterval(function () {
+                numb++
+                count.innerHTML = numb;
+            },1000)
+        }
+    </script> -->
+    <!-- <script>
+        /* // 改用箭头函数
+        const timer = {
+            time : 0 ,
+            interval : function () {
+                // 点击事件触发时
+                bt.onclick =  () => {
+                    // 开始计时
+                    setInterval( () =>{
+                        this.time ++
+                        count.innerHTML = this.time ; 
+                    },1000)
+                }
+            }
+        }
+        timer.interval()   //只有调用才会触发 */
+
+        /* const [a=2,b=2]=[1]
+        console.log(a,b)
+ */
+        /* const prop = "age";
+        const People = { };
+        People[prop] = 18; */
+
+       /*  People = {
+            [prop]:18,
+        } */
+
+        /* let s = new Set()
+        s.add(12).add(23).add(123)
+        s.forEach(function (value) {console.log(value)
+        },s) */
+
+
+    </script>     -->
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- <script>
+        console.log(typeof /^ab$/)
+    </script> -->
+    <!-- <script>
+        window.name = "red"
+        const calc = {
+            name:"blue",
+            add:function () {          //在此处没有add并没有形成块级作用域，这个箭头函数是在calc块级作用域上下文中被定义的，所以
+                const name = "yellow"
+                const adder = () => {
+                    console.log(this.name)
+                }
+                adder ()
+            },
+        }
+        calc.add()  //blue
+        const fn = calc.add;    //赋值操作：calc.add相当于执行后的值赋值给fn，fn执行即可，与add里面是如何运算已经没有关系
+        fn();        //red      函数在全局调用，默认指向window
+    </script> -->
+
+    <!-- 用map批量修改样式
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <script>
+        // 获取P元素
+        const [p1,p2,p3] = document.querySelectorAll("p");
+        console.log([p1,p2,p3]);
+        // 创建一个map ,map中推入一个二维数组，二维数组有三项，每项为P标签和style属性对应
+        let m = new Map([
+            [p1,{color:"red",backgroundColor:"yellow",fontSize:"40px"}],
+            [p2,{color:"blue",backgroundColor:"red",fontSize:"20px"}],
+            [p3,{color:"green",backgroundColor:"blue",fontSize:"30px"}]
+    ]);
+        console.log(m)
+        // 利用map.forEach方法遍历map中的内容
+        m.forEach((obj,key)=>{
+            // 在遍历时，创建每个P标签
+            // const key1 = document.createElement("key")
+            // 在遍历时，把每个key的style的赋值起来
+            for (const c in obj){    //遍历在对象obj中的每个键名c
+                // [c] = .c的值 =color、backgroundColor、fontSize
+                key.style[c] = obj[c]  
+            }
+        });
+    </script> -->
+
+    <script>
+        class Person {
+            constructor(username,sex,age) {
+                age,
+                username,
+                sex
+            }
+            sayHello() {
+                console.log('hello')
+            }
+            static sayHi() {
+                console.log("static hi")
+            }
+        }
+        man = new Person
+        class Man extends Person {
+            constructor() {
+                super()
+            }
+        }
+        console.log(Man.prototype)
+    </script>
+</body>
+</html>
